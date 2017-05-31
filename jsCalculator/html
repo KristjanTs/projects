@@ -1,0 +1,26 @@
+<div class="text-center" id="calculator">
+	<div class="top im-centered row">
+    <div class="btn btn-danger clear"><span class="clear">C</span></div>
+		<div class="screen"></div>
+	</div>
+  <br>
+	
+	<div class="keys">
+   <div class="btn btn-primary"><span>7</span></div>
+   <div class="btn btn-primary"><span>8</span></div>
+   <div class="btn btn-primary"><span>9</span></div>
+    <div class="btn btn-warning operator"><span>+</span></div><br><br>
+  <div class="btn btn-primary"><span>4</span></div>
+  <div class="btn btn-primary"><span>5</span></div>
+  <div class="btn btn-primary"><span>6</span></div>
+  <div class="btn btn-warning operator"><span>-</span></div><br><br>
+  <div class="btn btn-primary"><span>1</span></div>
+  <div class="btn btn-primary"><span>2</span></div>
+  <div class="btn btn-primary"><span>3</span></div>
+  <div class="btn btn-warning operator"><span>÷</span></div><br><br>
+  <div class="btn btn-primary"><span>0</span></div>
+  <div class="btn btn-warning"><span>.</span></div>
+  <div class="btn btn-warning eval"><span>=</span></div>
+  <div class="btn btn-warning operator"><span>x</span></div>
+	</div>
+</div>
