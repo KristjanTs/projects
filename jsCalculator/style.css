@@ -1,0 +1,28 @@
+# {
+  box-sizing: border-box;
+}
+
+html {
+  margin-top: 50px;
+  text-align: center;
+  }
+
+.btn {
+  width: 50px;
+  cursor: pointer;
+}
+
+.screen {
+  width: 162px;
+  background-color: #bdd0ef;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Arial";
+  
+}
+
+.im-centered { 
+  margin: auto; 
+  max-width: 212px;
+}
