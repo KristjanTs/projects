@@ -1,0 +1,45 @@
+html {
+  background-color: #f2f2f2;
+}
+
+.container {
+  background-color: #f2f2f2;
+  width: 100%;
+}
+
+h1 {
+  padding-bottom: 20px;
+}
+
+img {
+  width: 50px;
+  heigth: 50px;
+  border-radius: 50%;
+}
+
+#stream {
+  background-color: #6441a5;
+  width: 50%;
+  position: absolute;
+  left: 25%;
+  border-radius: 8px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+#click {
+  cursor: pointer;
+}
+
