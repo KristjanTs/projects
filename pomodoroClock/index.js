@@ -9,9 +9,10 @@ $(document).ready(function(){
   
   $("#start").click(function(){
     var counter = setInterval(timer,1000);
-    
+    count *= 60;
     function timer(){
       $("#start, #minus5Clock, #add5Clock, #minus1Break, #add1Break, #breakNum, #title2, #title1").hide();
+      $("#timeType").show();
       $("#timeType").html("Session time: ");
       count -= 1;      
       if (count === 0) {
@@ -21,11 +22,20 @@ $(document).ready(function(){
         $("#num").hide();
       }
       
-      $("#num").html(count);
+      if(count%60 >= 10){
+        $("#num").html(Math.floor(count/60) + ":" + count%60);
+            
+      }         
+      else {
+         $("#num").html(Math.floor(count/60) + ":" + "0" + count%60);
+         }
+      
+      
       
       function breakTimer(){
       $("#timeType").html("Break time: ");
       $("#breakNum").show();
+      breakTime *= 60;
       breakTime -= 1;
       if(breakTime === 0){
         clearInterval(startBreak);
@@ -33,7 +43,14 @@ $(document).ready(function(){
         buzzer.play();
         $("#breakNum, #timeType").hide();
       }
-        $("#breakNum").html(breakTime);
+        if(breakTime%60 >= 10){
+        $("#breakNum").html(Math.floor(breakTime/60) + ":" + breakTime%60);
+            
+      }         
+      else {
+         $("#breakNum").html(Math.floor(breakTime/60) + ":" + "0" + breakTime%60);
+         }
+        $("#timeType").show();
       
     };
     }
