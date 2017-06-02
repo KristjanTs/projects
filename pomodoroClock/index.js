@@ -67,8 +67,8 @@ $(document).ready(function(){
   });
   
   $("#minus5Clock").click(function(){
-    if(count>1){
-      count -=1;
+    if(count>5){
+      count -=5;
       $("#timerNum").html(count);
     }    
   });
