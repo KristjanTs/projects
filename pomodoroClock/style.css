@@ -1,5 +1,6 @@
 #title {
   margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 body {
@@ -15,4 +16,24 @@ h2 {
 
 #start {
   margin: 20px;
+}
+
+#minus5Clock {
+  font-size: 30px;
+  color: white;
+}
+
+#add5Clock {
+  font-size: 30px;
+  color: white;
+}
+
+#minus1Break {
+  font-size: 30px;
+  color: white;
+}
+
+#add1Break {
+  font-size: 30px;
+  color: white;
 }
