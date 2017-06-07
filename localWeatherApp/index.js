@@ -15,10 +15,15 @@ $(document).ready(function(){
     var longitude = parseFloat(location[1]);
     console.log(latitude.toFixed(2));
     //using the received latitude and longitude in openweather url for local weather info
-    var wurl="https://cors.5apps.com/?uri=http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&APPID=936e860c72edb8cb527707e7d59da1ea&units=metric";
-        //"http://api.openweathermap.org/data/2.5/weather?lat="+latitude.toFixed(2)+"&lon="+longitude.toFixed(2)+"&units=metric&APPID=7937581d3b3d62a52fdcb8412fe8b62f";
+    var wurl="https://cors.5apps.com/?uri=http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&APPID=7937581d3b3d62a52fdcb8412fe8b62f&units=metric";
+    
     console.log(wurl);
-    $("#location").html(city+", "+country);
+    if(city === "" || country === ""){
+      $("#location").html("Unknown, "+country);
+    }
+    else {
+      $("#location").html(city+", "+country);
+    }
     
     $.getJSON(wurl,function(data){
       var temp = data.main.temp;
