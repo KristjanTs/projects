@@ -1,0 +1,51 @@
+.buttons {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 40px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 4px grey;
+}
+
+.buttons:hover{
+  box-shadow: 0px 4px #404040;
+}
+
+#first {
+  background-color: green;
+}
+
+#first:hover {
+  background-color: #006600;
+}
+
+#second {
+  background-color: red;
+}
+
+#second:hover {
+  background-color: #cc0000;
+}
+
+#third {
+  background-color: yellow;
+}
+
+#third:hover {
+  background-color: #e6e600;
+}
+
+#fourth {
+  background-color: blue;
+}
+
+#fourth:hover {
+  background-color: #0000cc;
+}
+
+#text {
+  font-weight: bold;
+  margin-top: 20px;
+}
