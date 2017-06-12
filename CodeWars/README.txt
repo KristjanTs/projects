@@ -1,1 +1,1 @@
-Solutions to some codewars.com kata's.
+My solutions to some of the codewars.com kata's.
