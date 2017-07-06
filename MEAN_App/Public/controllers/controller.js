@@ -28,5 +28,10 @@ myApp.controller("AppCtrl",["$scope","$http", function($scope, $http){
     refresh();
   }
 
+  $scope.remove = function(id){
+    console.log(id);
+    $http.delete("/contactList"+id);
+    refresh();
+  };
 
 }]);
