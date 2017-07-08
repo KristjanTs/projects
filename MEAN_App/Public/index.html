@@ -24,6 +24,9 @@
           <th>
             Action
           </th>
+          <th>
+
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -40,6 +43,9 @@
           <td>
             <button class="btn btn-primary" ng-click="addContact()">Add Contact</button>
           </td>
+          <td>
+            <button class="btn btn-info" ng-click="update()">Update</button>
+          </td>
         </tr>
         <tr ng-repeat="contact in contactList">
           <td>
@@ -53,6 +59,9 @@
           </td>
           <td>
             <button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button>
+          </td>
+          <td>
+            <button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button>
           </td>
         </tr>
       </tbody>
