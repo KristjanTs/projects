@@ -42,9 +42,10 @@ app.put("/contactList/:id", function(req,res){
   console.log(req.body.name);
   db.contactList.findAndModify({query:{_id: mongojs.ObjectId(id)},
     update: {$set: {name: req.body.name, email: req.body.email, number: req.body.number}},
-    new: true
+    new: true}, function(err,doc){
+      res.json(doc);
   });
-})
+});
 
 app.listen(3000);
 console.log("server running at port 3000");
