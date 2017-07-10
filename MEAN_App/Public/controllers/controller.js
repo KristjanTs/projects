@@ -20,6 +20,7 @@ myApp.controller("AppCtrl",["$scope","$http", function($scope, $http){
   refresh();
 
   $scope.addContact = function(){
+    $scope.contact._id="";
   	$http.post("/contactList", $scope.contact).then(function (success){
 
     },function (error){
