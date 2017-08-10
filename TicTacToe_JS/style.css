@@ -1,0 +1,20 @@
+.container{
+  width: 20%;
+}
+
+.square {
+  width: 80px;
+  height:80px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+table {
+  margin: 0 auto;
+}
+
+#message {
+  font-family: "Times New Roman";
+  font-size: 22px;
+}
