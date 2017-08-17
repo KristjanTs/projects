@@ -18,3 +18,14 @@ table {
   font-family: "Times New Roman";
   font-size: 22px;
 }
+
+#X{
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#O{
+  cursor: pointer;
+  font-weight: bold;
+}
+
