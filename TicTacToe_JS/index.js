@@ -1,14 +1,26 @@
 var turn="X";
 var winner=null;
+var draw=null;
+board.style.visibility = "hidden";
+
+$("#O").click(function(){
+  turn = "O";
+  board.style.visibility = "visible";
+  startGame();
+});
+
+$("#X").click(function(){
+  turn="X";
+  board.style.visibility="visible";
+  startGame();
+})
 
 function startGame(){
   for(var i=1;i<10;i++){
     clearSquare(i);
   }
   winner = null;
-  if(Math.random()<0.5){
-    turn="O";
-  }
+  draw=null;
   setMessage(turn+" gets to start.");
 }
 
@@ -18,11 +30,15 @@ function setMessage(msg){
 
 function nextMove(square){
   if(winner != null){
-    setMessage(turn + " already won!")
+    setMessage(turn + " already won!");
+  }
+  else if(draw==true){
+    setMessage("It's a draw, try again!");
   }
   else if(square.innerHTML == ""){
     square.innerHTML=turn;
     switchTurn();
+    pcTurn();
   }
   else {
     setMessage("That square is already taken!");
@@ -34,6 +50,17 @@ function switchTurn(){
   if(checkWinner(turn)){
     setMessage("Congratulations, " + turn +"! You win!");
     winner = true;
+    setTimeout(function(){
+      startGame();
+    }, 1500);
+    
+  }
+  else if(checkDraw()){
+    setMessage("It's a draw!");
+    draw = true;
+    setTimeout(function(){
+      startGame();
+    }, 1500);
   }
   else if(turn=="X"){
     turn="O";
@@ -43,7 +70,31 @@ function switchTurn(){
     turn="X";
     setMessage("It's "+turn+"'s turn!");
   }
-  
+}
+
+function pcTurn(){
+  if(winner==null){
+    var array = [];
+  for(var i=1;i<10;i++){
+    if(checkSquare(i)==""){
+      array.push(i);
+    }
+  }
+  setTimeout(function(){
+    document.getElementById(array[Math.floor(Math.random()*array.length)]).innerHTML = turn;
+    switchTurn();
+  }, 100);
+      
+  }
+}
+
+function checkDraw(){
+  for(var i=1;i<10;i++){
+    if(checkSquare(i)==""){
+      return false;
+    }
+  }
+  return true;;
 }
 
 function checkWinner(move){
@@ -74,13 +125,5 @@ function checkSquare(number){
 }
 
 function clearSquare(number){
-  document.getElementById(number).innerText = "";
+  document.getElementById(number).innerHTML = "";
 }
-
-$(document).ready(function(){
-  startGame();
-});
-
-$("#restart").click(function(){
-  startGame();
-})
