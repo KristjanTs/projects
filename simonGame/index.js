@@ -1,52 +1,80 @@
-$(document).ready(function(){
-  var numOrder = [];
-  var counter= 0;
-  
-  $("#start").click(function(){
-      $("#start").hide();
-      for(var i=0; i<20; i++){
-      numOrder.push(Math.floor(Math.random()*4)+1);
+const RED = "RED";
+const BLUE = "BLUE";
+const YELLOW = "YELLOW";
+const GREEN = "GREEN";
+
+let simon = {
+  sendColor: color => { 
+    if(!simon.sequence.length){
     }
-
-    $("#first").click(function(){
-      if(numOrder[counter]!==1){
-        $("#text").html("Nope");
+    else {
+      if(color===simon.sequence[simon.step]){
+        //next step
+        if(simon.step === simon.sequence.length-1){
+          $("#step").html("Current score: "+simon.sequence.length);
+          simon.step = 0;
+          simon.nextSequence();
+          simon.hoverSequence();
+        }
+        else {
+          simon.step++;
+        }
       }
       else {
-        counter +=1;
+        //loss
+        alert("Wrong sequence!");
+        simon.sequence = [];
+        simon.step = 0;
+        $("#step").html("Current score: "+0);
       }
-    });
+    }
+  },
+  step: 0,
+  sequence: [],
+  colors: [RED, BLUE, YELLOW, GREEN],
+  nextSequence: () => {let nextColor = simon.colors[Math.floor(Math.random()*simon.colors.length)];
+                      simon.sequence.push(nextColor);
+;                      },
+  hoverSequence: () => {
+    for(var item of simon.sequence){
+     
+      console.log(item);
+    }
+  }
+};
 
-    $("#second").click(function(){
-      console.log(2);
-      if(numOrder[counter]!==2){
-        $("#text").html("Nope");
-      }
-      else {
-        counter +=1;
-      }
-    });
-
-    $("#third").click(function(){
-      console.log(3);
-      if(numOrder[counter]!==3){
-        $("#text").html("Nope");
-      }
-      else {
-        counter +=1;
-      }
-    });
-
-    $("#fourth").click(function(){
-      console.log(4);
-      if(numOrder[counter]!==4){
-        $("#text").html("Nope");
-      }
-      else {
-        counter +=1;
-      }
-    });
-    console.log(numOrder);
+$(document).ready(function(){
+  $("#RED").click(function(){
+    $("#RED").css("background-color", "darkred");
+    window.setTimeout(function(){
+      $("#RED").css("background-color", "red");
+    }, 500);
+    simon.sendColor(RED);
   });
-  
-});
+  $("#BLUE").click(function(){
+    $("#BLUE").css("background-color", "darkblue");
+    window.setTimeout(function(){
+      $("#BLUE").css("background-color", "blue");
+    }, 500);
+    simon.sendColor(BLUE);
+  });
+  $("#YELLOW").click(function(){
+    simon.sendColor(YELLOW);
+  });
+  $("#GREEN").click(function(){
+    $("#GREEN").css("background-color", "darkgreen");
+    window.setTimeout(function(){
+      $("#GREEN").css("background-color", "green");
+    }, 500);
+    simon.sendColor(GREEN);
+  });
+  $("#start").click(function(){
+    simon.nextSequence();
+    simon.hoverSequence();
+  });
+  $("#reset").click(function(){
+    simon.sequence = [];
+    simon.step = 0;
+    $("#step").html("Current score: "+ 0);
+  });
+})
