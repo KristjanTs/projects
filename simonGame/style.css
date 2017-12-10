@@ -1,72 +1,26 @@
-.buttons {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  padding: 40px;
-  margin: 10px;
-  border-radius: 10px;
+.simon-button {
+  height: 48px;
+  width: 48px;
   cursor: pointer;
-  box-shadow: 0px 4px grey;
+  border-radius: 2px;
 }
 
-.buttons:hover{
-  box-shadow: 0px 4px #404040;
-}
-
-#first {
-  background-color: green;
-}
-
-#first:hover {
-  background-color: #006600;
-}
-
-#second {
+#RED {
   background-color: red;
 }
 
-#second:hover {
-  background-color: #cc0000;
-}
-
-#third {
-  background-color: yellow;
-}
-
-#third:hover {
-  background-color: #e6e600;
-}
-
-#fourth {
+#BLUE {
   background-color: blue;
 }
 
-#fourth:hover {
-  background-color: #0000cc;
+#YELLOW {
+  background-color: goldenrod;
 }
 
-#text {
-  font-weight: bold;
-  margin-top: 20px;
+#GREEN {
+  background-color: green;
 }
 
-.start {
-  background-color: orange;
-  width: 40px;
-  height: 40px;
-  margin: auto;
-  border-radius: 20px;
-  font-weight: bold;
-  font-size: 14px;  
+.simon-control-button {
   cursor: pointer;
-  box-shadow: 0px 4px grey;
-}
-
-.start:hover{
-  background-color: #e69500;
-  box-shadow: 0px 4px #404040;
-}
-
-.start p {
-  padding-top: 7px;
 }
