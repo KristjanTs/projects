@@ -21,6 +21,22 @@
   background-color: green;
 }
 
+#RED:active {
+  background-color: darkred;
+}
+
+#BLUE:active {
+  background-color: darkblue;
+}
+
+#GREEN:active {
+  background-color: darkgreen;
+}
+
+#YELLOW:active {
+  background-color:yellow;
+}
+
 .simon-control-button {
   cursor: pointer;
 }
