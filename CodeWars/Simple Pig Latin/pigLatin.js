@@ -1,13 +1,7 @@
 function pigIt(str){
-  //Code here
-  var result = [];
-  var array = str.split(" ");
-  for(var i=0; i<array.length; i++) {
-    var secondArray = array[i].split("");
-    secondArray.push(secondArray[0], "ay");
-    secondArray.splice(0,1);
-    var word = secondArray.join("");
-    result.push(word);
+  let array = str.split(" ");
+  for (word in array) {
+    array[word] = array[word].slice(1) + array[word].slice(0,1) + "ay"
   }
-  return result.join(" ");
+  return array.join(" ");
 }
